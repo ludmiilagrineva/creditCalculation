@@ -4,9 +4,7 @@
 <%@ page pageEncoding="cp1251"%>
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+
 <body>
 <form:form action="" modelAttribute="calculation">
     <form:hidden path="id"/>
@@ -15,7 +13,12 @@
     Переплата по процентам ${calculation.overpayment(calculation.amountOfCredit, calculation.deposit, calculation.years, calculation.percent)} руб.
     <br><br>
     Долг+проценты ${calculation.total(calculation.amountOfCredit, calculation.deposit, calculation.years, calculation.percent)} руб.
+    <br><br>
+    проценты в месяц ${calculation.dolgPiece(calculation.amountOfCredit, calculation.deposit, calculation.percent)} руб.
+    <br><br>
+    основной долг ${calculation.percentPiece(calculation.amountOfCredit, calculation.deposit, calculation.percent)} руб.
 </form:form>
+
 
 
 

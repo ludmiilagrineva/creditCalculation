@@ -6,7 +6,7 @@
 <body>
 <h2>
     Главная страница
-
+    <br><br>
     <input type="button" value="Предыдущие расчеты"
     onclick="window.location.href='calculations'">
     <br><br>

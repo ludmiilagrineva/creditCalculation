@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import spring.rest.dao.CalculatorDAO;
 import spring.rest.entity.Calculation;
 import spring.rest.service.CalculatorService;
 
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -48,11 +50,19 @@ public class MyController {
         return "calculate";
     }
     @RequestMapping("/newCalculate")
-    public String newCalculate(@ModelAttribute("calculate") Calculation calculation){
-       calculatorService.saveCalculation(calculation);
-        return "redirect:/calculations";
+    public String newCalculate(@Valid @ModelAttribute("calculate") Calculation calculation, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "calculate";
+        } else {
+            calculatorService.saveCalculation(calculation);
+            return "redirect:/calculations";
+        }
     }
 
+//    @RequestMapping("/currentCalcul")
+//    public String currentCalculate(@ModelAttribute("calculate") Calculation calculation){
+//        return "currentCalc";
+//    }
 
     @RequestMapping("/show-calculation")
     public String showCalculation(@RequestParam("calcId") int id, Model model){
