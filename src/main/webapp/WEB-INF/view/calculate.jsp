@@ -1,10 +1,15 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html;charset=cp1251"%>
 <%@ page pageEncoding="cp1251"%>
 <!DOCTYPE html>
 <html>
 <body>
+<c:url var="mainPage" value="/">
+</c:url>
 
+<input type="button" value="Главная страница"
+       onclick="window.location.href='${mainPage}'"/>
 <br>
 <form:form action="newCalculate" modelAttribute="calculate">
     <br> <br>

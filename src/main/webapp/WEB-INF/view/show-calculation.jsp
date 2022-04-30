@@ -1,10 +1,15 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@ page language="java" contentType="text/html;charset=cp1251"%>
 <%@ page pageEncoding="cp1251"%>
 <!DOCTYPE html>
 <html>
+<c:url var="back" value="/calculations">
+</c:url>
 
+<input type="button" value="Назад"
+       onclick="window.location.href='${back}'"/>
 <body>
 <form:form action="" modelAttribute="calculation">
     <form:hidden path="id"/>

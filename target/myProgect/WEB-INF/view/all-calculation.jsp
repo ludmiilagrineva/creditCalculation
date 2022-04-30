@@ -3,14 +3,34 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<%--<link rel="stylesheet" th:href="css/demo.css"/>--%>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-<html>
+</head>
 <body>
-<h2>
-    Предыдущие расчеты
-</h2>
-<br><br>
-<table>
+
+<div class="p-3 mb-2 bg-secondary text-white">
+    <div class="container">
+
+        <c:url var="mainPage" value="/">
+
+
+        </c:url>
+
+        <input type="button" value="Главная страница"
+               onclick="window.location.href='${mainPage}'"
+               class="btn btn-outline-light btn-sm"/>
+
+            <br><br>
+
+        <h3>предыдущие рассчеты</h3>
+
+        <table class="table table-bordered table-hover table-dark table-striped">
+            <thead class="thead-dark">
+
 
 <tr>
     <th>Общая сумма</th>
@@ -18,7 +38,11 @@
     <th>Срок</th>
     <th>Процентная ставка</th>
     <th>Дата</th>
+    <th>Действия</th>
 </tr>
+ </thead>
+<tbody>
+
     <br><br>
     <c:forEach var="calc" items="${allCalc}">
 
@@ -35,18 +59,23 @@
     <td>${calc.years}</td>
     <td>${calc.percent}</td>
     <td>${calc.date}</td>
+
     <td>
         <input type="button" value="рассчитать"
-               onclick="window.location.href='${calcul}'"/>
-    </td>
+               onclick="window.location.href='${calcul}'"
+               class="btn btn-outline-light btn-sm"/>
 
-        <td>
+
             <input type="button" value="Удалить"
-            onclick="window.location.href='${deleteButton}'"/>
+            onclick="window.location.href='${deleteButton}'"
+                   class="btn btn-outline-light btn-sm"/>
+
         </td>
 
 </tr>
-</c:forEach>
+    </c:forEach>
+            </tbody>
+
 </table>
 </body>
 </html>
