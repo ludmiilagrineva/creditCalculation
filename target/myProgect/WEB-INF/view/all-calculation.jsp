@@ -14,17 +14,13 @@
 
 <div class="p-3 mb-2 bg-secondary text-white">
     <div class="container">
-
         <c:url var="mainPage" value="/">
-
-
         </c:url>
 
         <input type="button" value="Главная страница"
                onclick="window.location.href='${mainPage}'"
                class="btn btn-outline-light btn-sm"/>
-
-            <br><br>
+        <br><br>
 
         <h3>предыдущие рассчеты</h3>
 
