@@ -9,16 +9,15 @@
 </head>
 
 <body>
-<%--    <input type="button" value="рассчитать"--%>
-<%--           onclick="window.location.href='calculate'">--%>
 <div class="p-3 mb-2 bg-secondary text-white">
     <div class="container">
-<%--        кнопка не двигается!!!--%>
-<%--    <div class="ml-5"> --%>
+
+    <div class="float-sm-right">
+
     <input type="button" value="Предыдущие расчеты"
            onclick="window.location.href='calculations'">
-<%--        </div>--%>
-    <br><br>
+        </div>
+    <br>
 
 
     <form:form action="newCalculate" modelAttribute="calculate">
@@ -26,63 +25,64 @@
             <div class="row">
                 <div class="col-sm-4">
         Стоимость недвижимости <br>
-        <form:input path="amountOfCredit" id="flying" class="form-control mb-1 col-4" placeholder="Введите стоимость недвижимости"/>
+        <form:input path="amountOfCredit" value="" class="form-control mb-1 col-4" placeholder="Введите стоимость недвижимости"/>
         <form:errors path="amountOfCredit"/>
+                    <input type="range" min="100" max="200" step="2"> <br>
                <small id="helpBlock" class="form-text text-white">
                  руб.
                </small> <br>
-        <input type="range" min="0" max="10000000" step="1" value="50" form="flying">
+
                 </div>
             </div>
         </div>
-
+        <br>
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
         Первоначальный взнос <br>
         <form:input path="deposit" class="form-control mb-1 col-4" placeholder="Введите сумму первоначального взноса"/>
         <form:errors path="deposit"/>
+                    <input type="range" min="100" max="200" step="2"> <br>
                     <small id="helpBlock" class="form-text text-white">
                         руб.
                     </small> <br>
-        <input type="range" min="0" max="1000000" step="1" value="50">
                 </div>
             </div>
         </div>
-
+        <br>
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
         Срок кредитования <br>
         <form:input path="years" class="form-control mb-1 col-4" placeholder="Введите срок кредитования"/>
         <form:errors path="years"/>
+                    <input type="range" min="100" max="200" step="2"> <br>
                     <small id="helpBlock" class="form-text text-white">
                         лет
                     </small> <br>
-        <input type="range" min="1" max="30" step="1" value="1">
     </div>
 </div>
 </div>
-
+        <br>
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
         Процентная ставка <br>
         <form:input path="percent" class="form-control mb-1 col-4" placeholder="Введите процентную ставку"/>
         <form:errors path="percent"/>
+                    <input type="range" min="100" max="200" step="2"> <br>
                     <small id="helpBlock" class="form-text text-white">
                         %
                     </small> <br>
-        <input type="range" min="1" max="100" step="1" value="1">
 </div>
 </div>
 </div>
-        <%--    Дата <form:input path="date"/>--%>
+        <br>
 
         <input type="submit" value="рассчитать">
 
     </form:form>
-        <br> <br> <br>
+<br> <br> <br>
     </div>
 </div>
 </body>

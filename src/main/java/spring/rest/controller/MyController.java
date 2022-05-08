@@ -26,12 +26,6 @@ public class MyController {
         return "main-page";
     }
 
-
-    //    @GetMapping("hr_info")
-//    public String gethy(){
-//        return "all-calculation";
-//    }
-////////////////////////////////////////////////////////////////////////////////////////////////
     @RequestMapping("/calculations")
     public String showAllCalculations(Model model) {
         List<Calculation> allCalculations = calculatorService.getAllCalculations();
@@ -45,27 +39,22 @@ public class MyController {
         return "redirect:/calculations";
     }
 
-    /////////////////////////////////////////////////////////////////////////////////////////
-//    @RequestMapping("/calculate")
-//    public String newCalculate(Model model){
-//        Calculation calculation=new Calculation();
-//        model.addAttribute("calculate", calculation);
-//        return "calculate";
-//    }
+
     @RequestMapping("/newCalculate")
     public String newCalculate(@Valid @ModelAttribute("calculate") Calculation calculation, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "main-page";
         } else {
             calculatorService.saveCalculation(calculation);
+
             return "redirect:/calculations";
         }
     }
 
-//    @RequestMapping("/currentCalcul")
-//    public String currentCalculate(@ModelAttribute("calculate") Calculation calculation){
-//        return "currentCalc";
-//    }
+    @RequestMapping("/currentCalcul")
+    public String currentCalculate(@ModelAttribute("calculate") Calculation calculation){
+        return "currentCalc";
+    }
 
     @RequestMapping("/show-calculation")
     public String showCalculation(@RequestParam("calcId") int id, Model model) {
