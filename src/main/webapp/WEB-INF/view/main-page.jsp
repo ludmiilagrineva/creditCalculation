@@ -29,7 +29,7 @@
                         <form:input path="amountOfCredit" value="" class="form-control mb-1 col-4"
                                     placeholder="¬ведите стоимость недвижимости"/>
                         <form:errors path="amountOfCredit"/>
-                        <input type="range" min="100" max="200" step="2"> <br>
+                        <input type="range" min="100" max="200" step="2">
                         <small id="helpBlock" class="form-text text-white">
                             руб.
                         </small> <br>
@@ -45,7 +45,7 @@
                         <form:input path="deposit" class="form-control mb-1 col-4"
                                     placeholder="¬ведите сумму первоначального взноса"/>
                         <form:errors path="deposit"/>
-                        <input type="range" min="100" max="200" step="2"> <br>
+                        <input type="range" min="100" max="200" step="2">
                         <small id="helpBlock" class="form-text text-white">
                             руб.
                         </small> <br>
@@ -60,7 +60,7 @@
                         <form:input path="years" class="form-control mb-1 col-4"
                                     placeholder="¬ведите срок кредитовани€"/>
                         <form:errors path="years"/>
-                        <input type="range" min="100" max="200" step="2"> <br>
+                        <input type="range" min="100" max="200" step="2">
                         <small id="helpBlock" class="form-text text-white">
                             лет
                         </small> <br>
@@ -75,7 +75,7 @@
                         <form:input path="percent" class="form-control mb-1 col-4"
                                     placeholder="¬ведите процентную ставку"/>
                         <form:errors path="percent"/>
-                        <input type="range" min="100" max="200" step="2"> <br>
+                        <input type="range" min="100" max="200" step="2">
                         <small id="helpBlock" class="form-text text-white">
                             %
                         </small> <br>
@@ -87,7 +87,7 @@
             <input type="submit" value="—охранить">
 
         </form:form>
-        <br> <br> <br>
+        <br> <br> <br> <br>
     </div>
 </div>
 </body>

@@ -14,19 +14,19 @@ public class Calculation {
     @Column(name = "id")
     private int id;
     @Column(name = "amount_of_credit")
-    @Min(value = 50000, message = "минимальное значение 50000")
+    @Min(value = 50000, message = "min значение 50000")
     @Max(value = 2000000000, message = "не должно превышать 2000000000")
     private int amountOfCredit;
     @Column(name = "deposit")
-    @Min(value = 10000, message = "минимальное значение 10000")
+    @Min(value = 10000, message = "min значение 10000")
     @Max(value = 2000000, message = "не должно превышать 2000000")
     private int deposit;
     @Column(name = "years")
-    @Min(value = 5, message = "минимальное значение 5")
+    @Min(value = 5, message = "min значение 5")
     @Max(value = 40, message = "не должно превышать 40")
     private int years;
     @Column(name = "percent")
-    @Min(value = 1, message = "минимальное значение 1")
+    @Min(value = 1, message = "min значение 1")
     @Max(value = 100, message = "не должно превышать 100")
     private double percent;
 
